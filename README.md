@@ -26,7 +26,7 @@ bash download_target_img.sh
 Run a training process together with the demonstration app:
 
 ```bash
-bash run_demonstraton.sh -c config.yaml
+bash run_demonstration.sh
 ```
 
 For further details see the files' docstrings.
