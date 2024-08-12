@@ -6,9 +6,9 @@ The training is performed on the regularly interspaced grid containing 1/4 of
 the initial image pixels, as also suggested in the article [1].
 The validation is performed on all other pixels.
 
-[1] Tancik, Matthew, et al. "Fourier features let networks learn high frequency
-functions in low dimensional domains." Advances in neural information processing
-systems 33 (2020): 7537-7547.
+[1] Tancik, Matthew, et al. "Fourier features let networks learn high
+frequency functions in low dimensional domains." Advances in neural
+information processing systems 33 (2020): 7537-7547.
 """
 from typing import Dict, List
 from argparse import ArgumentParser, Namespace
@@ -16,7 +16,12 @@ from pathlib import Path
 from torch import optim
 from image_reconstruction.trainer import ReconstructionTrainer
 from image_reconstruction.models import FurierMLP
-from image_reconstruction.loggers import CSVLogger, VideoLogger, StateDictLogger, CurrentImgLogger
+from image_reconstruction.loggers import (
+    CSVLogger,
+    VideoLogger,
+    StateDictLogger,
+    CurrentImgLogger
+)
 from utils import load_image, load_yaml
 
 

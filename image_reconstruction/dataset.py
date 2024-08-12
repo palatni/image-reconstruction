@@ -1,8 +1,7 @@
 """
 This module contains a dataset that is used for image recovery.
 """
-
-from typing import Optional, Tuple
+from typing import Tuple
 import numpy as np
 from torch.utils.data import Dataset
 

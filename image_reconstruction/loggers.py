@@ -2,10 +2,9 @@
 This module contains Classes that are intended to store
 any data during the training process.
 """
-
 from itertools import count
 from dataclasses import dataclass
-from typing import Tuple, Dict, Callable, List
+from typing import Dict, Callable
 from os import PathLike
 from abc import ABC, abstractmethod
 import io
@@ -63,7 +62,6 @@ class LoggingData:
     A dataclass that specifies the supported values that can be
     stored or which derivative data can be stored.
     """
-
     epoch_id: None | int = None
     train_mse: None | float = None
     val_mse: None | float = None
@@ -77,7 +75,6 @@ class Logger(ABC):
     """
     A base class for logging.
     """
-
     @_set_docstring(_get_init_docstring())
     def __init__(
         self,
@@ -99,9 +96,8 @@ class CSVLogger(Logger):
     """
     A logger that saves and updates a csv file that
     contains the next columns:
-    |Eoch ID | Train MSE | Val MSE | Train PSRR | Val PSNR|
+    |Epoch ID | Train MSE | Val MSE | Train PSRR | Val PSNR|
     """
-
     @_set_docstring(_get_init_docstring('metric_log.csv'))
     def __init__(
         self,
@@ -143,7 +139,6 @@ class VideoLogger(Logger):
     a video that pictures the prediction evolution
     during the training can be stored.
     """
-
     @_set_docstring(_get_init_docstring('train_video.mp4', 1), prepend=True)
     def __init__(
         self,
@@ -192,7 +187,6 @@ class StateDictLogger(Logger):
     """
     A logger that stores the model's state dict.
     """
-
     @_set_docstring(_get_init_docstring('state_dict.pt'))
     def __init__(
         self,
@@ -211,9 +205,12 @@ class CurrentImgLogger(Logger):
     """
     A logger that stores and updates a predicted image during the training
     """
-
     @_set_docstring(_get_init_docstring('current_img.jpg'))
-    def __init__(self, file_path: str | PathLike = 'current_img.jpg', write_frequency: int = 10) -> None:
+    def __init__(
+        self,
+        file_path: str | PathLike = 'current_img.jpg',
+        write_frequency: int = 10
+    ) -> None:
         super().__init__(file_path, write_frequency)
 
     @_set_docstring(_LOG_DOCSTRING)

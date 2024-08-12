@@ -20,8 +20,6 @@ repos:
         types: [ python ]
       - id: pylint
         name: pylint
-        args:
-          - --rcfile=setup.cfg
-        entry: pylint .
+        entry: pylint
         language: system
         types: [ python ]

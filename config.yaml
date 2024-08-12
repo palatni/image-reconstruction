@@ -16,7 +16,7 @@ csv_metric: # a csv file that contains MSE and PSNR metrics
   write_frequency: 5
 video_file: # a video which frames represent reconstructed image on each epoch. Should be mp4 format
   file: 'training.mp4'
-  write_frequency: 1
+  write_frequency: 5
 predicted_image: # the current reconstructed image
   file: 'pred_img.jpg'
   write_frequency: 5
@@ -27,7 +27,7 @@ state_dict: # the model's state dict
 
 # =========== Model's Parameters ============
 
-num_phases: 128 # the number of (cos, sin) pairs in the encoder's feature map
+num_phases: 256 # the number of (cos, sin) pairs in the encoder's feature map
 encoder_scale: 25 # the standard deviation of the normal distribution initializing encoder's parameter matrix
 mlp_feature_list: [256, 256, 256, 256] # each value in the list represents the number of output features
                                        # received from a model's full connected layer.

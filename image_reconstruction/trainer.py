@@ -2,7 +2,6 @@
 This module contains a trainer class that wraps all the
 training routine
 """
-
 from typing import Tuple, Iterable
 import numpy as np
 import torch
@@ -95,7 +94,8 @@ class ReconstructionTrainer:
             self._img_accum.update(pos, pred)
             pbar.update()
             pbar.set_postfix(
-                train_mse=self._metric_accum.mse, train_psnr=self._metric_accum.psnr
+                train_mse=self._metric_accum.mse,
+                train_psnr=self._metric_accum.psnr,
             )
 
     def _val(self, pbar: tqdm) -> None:
@@ -109,7 +109,8 @@ class ReconstructionTrainer:
                 self._img_accum.update(pos, pred)
                 pbar.update()
                 pbar.set_postfix(
-                    val_mse=self._metric_accum.mse, val_psnr=self._metric_accum.psnr
+                    val_mse=self._metric_accum.mse,
+                    val_psnr=self._metric_accum.psnr,
                 )
 
     def fit(self, num_epochs) -> None:

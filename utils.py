@@ -3,7 +3,6 @@ This module contains helper functions for the scripts.
 
 """
 from typing import Dict
-from collections import defaultdict
 from os import PathLike
 from PIL import Image
 import numpy as np

@@ -8,7 +8,7 @@ import numpy as np
 
 class MSEMetricsAccumulator:
     """
-    An accumulator that gathers the cummulative sum
+    An accumulator that gathers the cumulative sum
     and number of total samples, so that the MSE and PSNR
     metrics can be restored after the epoch end.
     """

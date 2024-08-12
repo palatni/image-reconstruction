@@ -1,8 +1,7 @@
 """
 This module contains pytorch models for training
 """
-
-from typing import Tuple, Sequence
+from typing import Iterable
 from torch import nn
 import torch
 
@@ -68,7 +67,7 @@ class FurierMLP(nn.Module):
     def __init__(self,
                  num_phases: int,
                  encoder_scale: float,
-                 mlp_feature_list: Sequence,
+                 mlp_feature_list: Iterable,
                  trainable_encoder: bool = False,
                  ) -> None:
         """

@@ -1,7 +1,7 @@
 """
-This script monitors the cache folder, plots charts with metrics and shows the current image,
-restored from the target during training. csv_metric and prediction_image keys should be
-specified in the config file.
+This script monitors the cache folder, plots charts with metrics and shows
+the current image, restored from the target during training. csv_metric
+and prediction_image keys should be specified in the config file.
 """
 from typing import Dict
 import sys
@@ -73,7 +73,7 @@ class _ImgSection:
 
 def _parse_args() -> Dict:
     """
-    Unfortunately Streamlit disalows flag arguments:
+    Unfortunately Streamlit disallows flag arguments:
     https://discuss.streamlit.io/t/command-line-arguments/386/2
     So, ArgumentParser can't be applied here
 
