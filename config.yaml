@@ -1,0 +1,47 @@
+cache_dir: '.cache' # a cache directory with all training artifacts
+source_img: '.cache/target_img.jpg' # an image to be reconstructed.
+
+
+# ============ Caching Configurations ============
+
+# null value can be assigned to the key in order to avoid caching of the specific parameter.
+# file fields represent file names for each parameter.
+
+# Write frequency 10, for instance, means that the file will be updated once per 10 epochs.
+# Video caching is an exception. Write frequency 10 for the video represents that a new frame will
+# be added to the buffer once per 10 epochs. The whole video has to be stored at the end of the training.
+
+csv_metric: # a csv file that contains MSE and PSNR metrics
+  file: 'metrics.csv'
+  write_frequency: 5
+video_file: # a video which frames represent reconstructed image on each epoch. Should be mp4 format
+  file: 'training.mp4'
+  write_frequency: 1
+predicted_image: # the current reconstructed image
+  file: 'pred_img.jpg'
+  write_frequency: 5
+state_dict: # the model's state dict
+  file: 'state_dict.pt'
+  write_frequency: 5
+
+
+# =========== Model's Parameters ============
+
+num_phases: 128 # the number of (cos, sin) pairs in the encoder's feature map
+encoder_scale: 25 # the standard deviation of the normal distribution initializing encoder's parameter matrix
+mlp_feature_list: [256, 256, 256, 256] # each value in the list represents the number of output features
+                                       # received from a model's full connected layer.
+trainable_encoder: false # a flag that enables/disables encoder's parameters training.
+
+# =========== Training parameters ============
+
+epochs: 2000
+optimizer_type: 'Adam' # optimizer for training. Should be defined in torch.optim module
+learning_rate: 0.001
+batch_size: 4096
+dataloader_workers: 4
+device: null # the device specification according to the pytorch convention. null means auto-choice.
+
+# =========== Demonstration parameters ============
+
+update_delay: 5 # the number of seconds the demonstrator waits before its state is updated
