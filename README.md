@@ -9,6 +9,8 @@ A framework for the image reconstraction experiments has been implemented which 
 
 Also, a [Streamlit](https://streamlit.io/)-based demonstration has been implemented that allows to monitor the reconstruction quality during the training
 
+![Prediction During Training](https://drive.google.com/uc?export=view&id=1WHl9b5q6Cm2if7_Ri5YcwFiCL-93Yi76)
+
 ![Demonstration](https://drive.google.com/uc?export=view&id=1I-GEFByjpEZ4djkiCA6E2oCVL3ZEoihF)
 ## Quickstart
 
