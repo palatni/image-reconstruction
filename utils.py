@@ -1,6 +1,5 @@
 """
 This module contains helper functions for the scripts.
-
 """
 from typing import Dict
 from os import PathLike
