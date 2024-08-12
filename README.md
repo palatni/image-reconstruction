@@ -1,13 +1,10 @@
 # Image Reconstruction using Fourier Features: A PyTorch Implementation
 
-This project provides a [Pytorch](https://pytorch.org) implementation of an image reconstruction algorithm, as presented in
-the paper: [Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains](https://arxiv.org/abs/2006.10739)
-
-
-[Original JAX-based project](https://github.com/tancik/fourier-feature-networks).
-
 ## Project description
-This project includes a framework for conducting image reconstruction experiments. It enables Storage of training metrics and caching of a video showcasing the reconstruction quality throughout the training process
+This project provides a [Pytorch](https://pytorch.org) implementation of an image reconstruction algorithm, as presented in
+the paper: [Fourier Features Let Networks Learn High Frequency Functions in Low Dimensional Domains](https://arxiv.org/abs/2006.10739). Original JAX-based code: [Fourier Feature Networks](https://github.com/tancik/fourier-feature-networks).
+
+The project includes a framework for conducting image reconstruction experiments. It supports storage of training metrics and caching of a video showcasing the reconstruction quality throughout the training process
 
 Also, a [Streamlit](https://streamlit.io/) application is provided to visualize and monitor the reconstruction quality in real-time during training.
 
